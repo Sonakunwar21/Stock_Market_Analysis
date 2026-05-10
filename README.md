@@ -1,14 +1,20 @@
 <div align="center">
 
-# 📈 Stock Market Analysis & EDA
+# 🚀 NASDAQ Stock Market Analysis
 
-### Exploratory Data Analysis on NASDAQ Stock Market Dataset
+### Exploratory Data Analysis of Securities, ETFs & Financial Stability
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Pandas](https://img.shields.io/badge/Pandas-EDA-important)
-![Seaborn](https://img.shields.io/badge/Visualization-Seaborn-success)
-![Matplotlib](https://img.shields.io/badge/Analytics-Matplotlib-orange)
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+<br>
+
+![Python](https://img.shields.io/badge/Python-Data%20Analysis-blue?style=for-the-badge&logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-EDA-important?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Visualization-Seaborn-success?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Plots-Matplotlib-orange?style=for-the-badge)
+![Project](https://img.shields.io/badge/Project-Completed-brightgreen?style=for-the-badge)
+
+<br>
+
+### 📊 Understanding Modern Financial Market Structures Through Data
 
 </div>
 
