@@ -1,23 +1,21 @@
 <div align="center">
 
-# 📈 Advanced NASDAQ Stock Market EDA
+# 📊 NASDAQ Stock Market Analysis & EDA
 
-### Deep Exploratory Data Analysis of Nasdaq Securities, ETFs & Market Structure
-
-<img src="images/stock_market_banner.png" width="900"/>
-
-<br>
-
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Pandas](https://img.shields.io/badge/Pandas-EDA-important)
-![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-success)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Analytics-orange)
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
-
-</div>
+### Exploring Securities, ETFs, Financial Status & Exchange Structure Through Data Analysis
 
 ---
 
+### 🛠️ Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-important)
+![NumPy](https://img.shields.io/badge/NumPy-Computations-informational)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-success)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Plotting-orange)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
+
+---
 # 📌 Project Overview
 
 This project performs an in-depth **Exploratory Data Analysis (EDA)** on a Nasdaq stock market security dataset to understand:
@@ -92,7 +90,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Financial Status Distribution
 
-![Financial Status](images/financial_status.png)
 
 ### Insights
 - Most securities are financially stable
@@ -102,7 +99,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Listing Exchange Distribution
 
-![Listing Exchange](images/listing_exchange.png)
 
 ### Insights
 - Nasdaq contains the largest number of securities
@@ -112,8 +108,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Market Category Distribution
 
-![Market Category](images/market_category.png)
-
 ### Insights
 - Many securities fall outside traditional Nasdaq categories
 - Nasdaq contains both regular stocks and investment products
@@ -122,7 +116,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## ETF Distribution
 
-![ETF Distribution](images/etf_distribution.png)
 
 ### Insights
 - Most securities are non-ETFs
@@ -134,7 +127,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Listing Exchange vs ETF
 
-![Listing Exchange vs ETF](images/listing_exchange_vs_etf.png)
 
 ### Insights
 - NYSE Arca and Cboe are ETF-focused exchanges
@@ -144,7 +136,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Financial Status vs ETF
 
-![Financial Status vs ETF](images/financial_status_vs_etf.png)
 
 ### Insights
 - ETFs appear more financially stable
@@ -154,7 +145,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Listing Exchange vs Financial Status
 
-![Listing Exchange vs Financial Status](images/listing_exchange_vs_financial_status.png)
 
 ### Insights
 - Financial warning labels mainly appear in Nasdaq-listed securities
@@ -164,7 +154,6 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Financial Status vs Market Category
 
-![Financial Status vs Market Category](images/financial_status_vs_market_category.png)
 
 ### Insights
 - Smaller companies show relatively higher financial risk
@@ -175,8 +164,7 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 # 🔥 Multivariate Analysis
 
 ## Correlation Heatmap
-
-![Correlation Heatmap](images/correlation_heatmap.png)
+- A correlation heatmap was used to understand relationships between different
 
 ### Key Observations
 - Market Category strongly depends on Listing Exchange
