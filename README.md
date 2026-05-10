@@ -1,37 +1,37 @@
 <div align="center">
 
-# 📊 NASDAQ Stock Market Analysis & EDA
+# 📈 Stock Market Analysis & EDA
 
-### Exploring Securities, ETFs, Financial Status & Exchange Structure Through Data Analysis
-
----
-
-### 🛠️ Tech Stack
+### Exploratory Data Analysis on NASDAQ Stock Market Dataset
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-important)
-![NumPy](https://img.shields.io/badge/NumPy-Computations-informational)
-![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-success)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Plotting-orange)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
+![Pandas](https://img.shields.io/badge/Pandas-EDA-important)
+![Seaborn](https://img.shields.io/badge/Visualization-Seaborn-success)
+![Matplotlib](https://img.shields.io/badge/Analytics-Matplotlib-orange)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+
+</div>
 
 ---
+
 # 📌 Project Overview
 
-This project performs an in-depth **Exploratory Data Analysis (EDA)** on a Nasdaq stock market security dataset to understand:
+This project performs Exploratory Data Analysis (EDA) on a NASDAQ stock market dataset to understand:
 
-- Market structure
-- Security classifications
-- ETF behavior
-- Financial stability patterns
-- Exchange-specific characteristics
-- Nasdaq compliance indicators
+- Different types of securities traded in the market
+- Distribution of exchanges and market categories
+- Financial stability of companies
+- ETF and non-ETF behavior
+- Nasdaq-specific compliance indicators
+- Relationships between market features
 
-The dataset contains traditional company stocks, ETFs, and specialized investment products listed across Nasdaq and related exchanges.
+The analysis mainly focuses on understanding the structure of stock market securities rather than prediction or machine learning.
 
 ---
 
 # 🛠️ Tech Stack
+
+## Libraries Used
 
 - Python
 - Pandas
@@ -46,43 +46,49 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 | Feature | Description |
 |---|---|
-| Nasdaq Traded | Whether the security trades on Nasdaq |
-| Symbol | Unique ticker symbol |
-| Security Name | Full security/company name |
-| Listing Exchange | Official listing exchange |
-| Market Category | Nasdaq market tier classification |
-| ETF | Indicates whether the security is an ETF |
+| Symbol | Unique stock/security ticker |
+| Security Name | Name of company/security |
+| Listing Exchange | Exchange where security is listed |
+| Market Category | Nasdaq market tier/category |
+| ETF | Whether security is ETF or not |
 | Round Lot Size | Standard trading lot size |
 | Financial Status | Financial/compliance condition |
-| CQS Symbol | Consolidated quotation symbol |
-| NASDAQ Symbol | Nasdaq-specific ticker symbol |
-| NextShares | Specialized investment product indicator |
+| Nasdaq Traded | Whether tradable through Nasdaq system |
+| Test Issue | Test or real tradable security |
+| CQS Symbol | Secondary ticker identifier |
+| NASDAQ Symbol | Nasdaq ticker symbol |
+| NextShares | Special investment product indicator |
 
 ---
 
-# 🧹 Data Cleaning & Missing Value Handling
+# 🧹 Handling Missing Values
 
 ## Financial Status
-- Missing values were replaced with `N`
-- Nasdaq explicitly flags problematic securities (`D/E/H`)
-- Missing values mostly implied normal status
+
+Missing values in the Financial Status column were replaced with **"N" (Normal)** because Nasdaq generally flags problematic companies explicitly using categories like D, E, or H. Therefore, missing values most likely indicate no financial issue.
 
 ---
 
-## Market Category Handling
+## CQS Symbol
 
-- Blank (`' '`) values were not treated as traditional missing values
-- `Q`, `G`, and `S` categories apply mainly to regular Nasdaq-listed companies
-- ETF-related blanks were labeled as `ETF`
-- Remaining blanks were labeled as `Not Applicable`
-- This preserved real-world market meaning and avoided incorrect labeling
+Missing values in the CQS Symbol column were filled using corresponding values from the Symbol column because both columns mostly represented the same ticker identifier.
+
+After verification, the column became redundant and added little new information.
 
 ---
 
-## CQS Symbol Handling
+## Market Category
 
-- Missing values were filled using the `Symbol` column
-- Since both columns were nearly identical, `CQS Symbol` was dropped later due to redundancy
+Blank values in the Market Category column were not treated as missing immediately.
+
+- Q, G, and S categories apply mainly to regular Nasdaq-listed companies.
+- Many securities in the dataset were ETFs, which do not belong to these categories.
+
+Therefore:
+- ETF securities with blank categories were labeled as **ETF**
+- Remaining blanks were labeled as **Not Applicable**
+
+This kept the dataset more realistic and meaningful.
 
 ---
 
@@ -90,128 +96,168 @@ The dataset contains traditional company stocks, ETFs, and specialized investmen
 
 ## Financial Status Distribution
 
-
 ### Insights
+
 - Most securities are financially stable
 - Distressed securities are very rare
+- Dataset is dominated by normal companies
 
 ---
 
 ## Listing Exchange Distribution
 
-
 ### Insights
-- Nasdaq contains the largest number of securities
+
+- NASDAQ contains the largest number of securities
 - Some exchanges contain only limited listings
+- Multiple exchanges are present in the dataset
 
 ---
 
 ## Market Category Distribution
 
 ### Insights
-- Many securities fall outside traditional Nasdaq categories
-- Nasdaq contains both regular stocks and investment products
+
+- Many securities do not belong to standard Nasdaq categories
+- Q category contains the largest number of companies
+- Dataset includes both traditional and non-traditional securities
 
 ---
 
 ## ETF Distribution
 
-
 ### Insights
+
 - Most securities are non-ETFs
-- ETFs still represent a significant market segment
+- ETFs still represent a significant portion of the market
+- Investment products are an important part of modern markets
 
 ---
 
-# 📈 Bivariate Analysis
+## Round Lot Size Distribution
+
+### Insights
+
+- Most securities trade in standard lots of 100 shares
+- Very few securities use lot sizes of 1 or 10
+- Smaller lot sizes are rare but valid market cases
+
+---
+
+# 📊 Bivariate Analysis
+
+## Listing Exchange vs Market Category
+
+### Insights
+
+- Q, G, and S categories appear mainly for Nasdaq-listed securities
+- Other exchanges mostly have undefined market categories
+- Market category system is strongly Nasdaq-specific
+
+---
 
 ## Listing Exchange vs ETF
 
-
 ### Insights
-- NYSE Arca and Cboe are ETF-focused exchanges
-- Nasdaq contains both regular stocks and ETFs
+
+- NYSE mainly contains regular company stocks
+- NYSE Arca and Cboe contain many ETFs
+- Different exchanges focus on different security types
 
 ---
 
 ## Financial Status vs ETF
 
-
 ### Insights
-- ETFs appear more financially stable
-- Most ETFs fall under Financial Status `N`
 
----
-
-## Listing Exchange vs Financial Status
-
-
-### Insights
-- Financial warning labels mainly appear in Nasdaq-listed securities
-- Financial Status reflects Nasdaq-specific compliance monitoring
+- Most ETFs are financially stable
+- Distressed categories are mostly associated with regular companies
+- ETFs rarely appear in risky financial categories
 
 ---
 
 ## Financial Status vs Market Category
 
+### Insights
+
+- Most companies across all categories are financially stable
+- Distressed companies are mainly concentrated in Nasdaq categories
+- Financial monitoring is more visible in Nasdaq-listed firms
+
+---
+
+## Listing Exchange vs Financial Status
 
 ### Insights
-- Smaller companies show relatively higher financial risk
-- Larger companies appear more stable
+
+- Financial status information mainly appears for Nasdaq-listed securities
+- Most securities across exchanges belong to normal category N
+- Nasdaq seems to maintain stronger compliance tracking
 
 ---
 
-# 🔥 Multivariate Analysis
+# 📊 Multivariate Analysis
 
 ## Correlation Heatmap
-- A correlation heatmap was used to understand relationships between different
 
-### Key Observations
-- Market Category strongly depends on Listing Exchange
-- ETFs mostly fall outside traditional company categories
-- `NASDAQ Symbol` and `Symbol` are nearly identical
+### Insights
 
----
-
-# 💡 Major Insights
-
-- Most securities are financially stable
-- ETFs are generally more stable than regular company stocks
-- Smaller companies show relatively higher financial risk
-- Different exchanges specialize in different security types
-- Nasdaq contains stocks, ETFs, and specialized investment products
-- Financial Status mainly reflects Nasdaq’s internal monitoring system
-- Most securities follow the standard 100-share trading structure
+- Listing Exchange and Market Category are strongly related
+- ETF shows moderate relationship with Market Category
+- Financial Status is highly connected with Nasdaq categories
+- Some features are redundant and highly correlated
 
 ---
 
-# ⚠️ Data Issues & Limitations
+# 🔍 Major Insights
 
-- No historical stock price data
-- No date/time column
-- No trading volume or market capitalization
-- Some redundant features exist
-- Financial Status is mainly Nasdaq-specific
+- Most companies and securities are financially stable
+- ETFs form a major part of the modern stock market
+- Nasdaq contains companies, ETFs, and special investment products
+- Smaller company categories generally show higher risk
+- Financial Status feature appears Nasdaq-specific
+- Most securities trade in standard lot sizes
+- Different exchanges specialize in different types of securities
+- Dataset captures both traditional stocks and non-traditional financial products
+
+---
+
+# ⚠️ Data Issues Noted
+
+- Dataset lacks historical stock price information
+- No sector or industry information available
+- No market capitalization data
+- Some features are highly redundant
+- Financial Status mainly applies to Nasdaq-listed securities
 
 ---
 
 # 🚀 Future Improvements
 
 - Add historical stock price data
-- Include market capitalization
-- Add sector/industry information
+- Include sector and industry information
+- Add market capitalization
 - Perform time-series analysis
-- Build predictive/risk-analysis models
+- Build predictive or risk-analysis models
 
 ---
 
+# ✅ Final Conclusion
+
+- This analysis shows that modern stock markets contain many different types of securities beyond regular company stocks.
+- Most securities in the dataset are financially stable, while ETFs and other investment products also play an important role in the market ecosystem.
+- The project also highlights Nasdaq’s structured market categorization and financial monitoring system.
+
+---
+
+</div>
 # 📁 Project Structure
 
 ```text
-NASDAQ-Stock-Market-EDA/
+Stock_Market_Analysis/
 │
 ├── data/
-│   └── nasdaq_dataset.csv
+│   └── stock_market_dataset.csv
 │
 ├── notebooks/
 │   └── stock_market_eda.ipynb
